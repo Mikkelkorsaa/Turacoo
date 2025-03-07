@@ -1,13 +1,43 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider Theme="MyCustomTheme" />
+@code{
+    MudTheme MyCustomTheme = new MudTheme()
+    {
+        PaletteLight = new PaletteLight()
+        {
+            Primary = "#1a3733",
+            Secondary = "#3e7f67",
+            Tertiary = "#935431",
+            Info = "#3e7f67",
+            AppbarBackground = Colors.Gray.Darken4
+        },
+        LayoutProperties = new LayoutProperties()
+        {
+            DrawerWidthLeft = "260px",
+            DrawerWidthRight = "300px"
+        },
+        Typography = new Typography()
+        {
+            Default = new DefaultTypography()
+            {
+                FontFamily = new[] { "Poppins", "Helvetica", "Arial", "sans-serif" }
+            }
+        }
+    };
+}
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar>
-        Turacoo 
+    <MudAppBar Fixed="false">
+        <MudLink Href="/">
+            <MudImage Src="Images/logo_no_background.png" Alt="Home" Style="height: 50px; width: auto;" Class="mr-2" />
+        </MudLink>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Href="https://github.com/Mikkelkorsaa" Target="_blank" Color="Color.Inherit" />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Href="https://github.com/jamsee" Target="_blank" Color="Color.Inherit" />
     </MudAppBar>
     <MudMainContent>
         @Body

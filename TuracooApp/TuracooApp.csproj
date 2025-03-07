@@ -11,4 +11,8 @@
       <PackageReference Include="MudBlazor" Version="8.3.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Features\Home\Index.razor" />
+    </ItemGroup>
+
 </Project>

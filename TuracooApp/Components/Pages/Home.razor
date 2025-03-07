@@ -1,4 +1,127 @@
 ﻿@page "/"
 
-<MudContainer MaxWidth="MaxWidth.False">
+<div class="d-flex flex-column align-items-center" style="width: 100%; height: calc(100vh - 192px);)">
+    <MudPaper Class="mud-theme-primary" Width="80%" Height="100%">
+        <MudImage Class="mx-auto d-block" Src="Images/logo_no_background.png" Style="height: 60vh"/>
+        <MudText Align="Align.Center" Typo="Typo.h2">Din Partner i Digital Transformation</MudText>
+        <MudText Align="Align.Center" Typo="Typo.subtitle1">Vi omsætter komplekse udfordringer til værdiskabende digitale løsninger.</MudText>
+    </MudPaper>
+</div>
+
+<div class="d-flex flex-column align-items-center" style="padding-top: 64px; padding-bottom: 64px; background-color: #f8f9fa;">
+    <MudPaper Elevation="0" Width="80%" Height="100%" Style="padding: 32px; background-color: #f8f9fa;">
+        <MudText GutterBottom="true" Align="Align.Center" Typo="Typo.h3">Mere end bare teknologi</MudText>
+        <MudText GutterBottom="true" Align="Align.Center" Typo="Typo.body1" Style="width: 40%; margin: 0 auto;">
+            Hos os handler softwareudvikling ikke bare om kode – det handler om at skabe reel forretningsværdi.
+            Vi er din strategiske partner, der hjælper med at transformere idéer til skalerbare løsninger.
+        </MudText>
+        
+    </MudPaper>
+</div>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-8">
+    <MudText Typo="Typo.h3" Align="Align.Center" Class="mb-8">Vores Tilgang</MudText>
+
+    <MudGrid>
+        <!-- First row -->
+        <MudItem xs="12" md="6">
+            <MudCard Elevation="4" Class="rounded-lg pa-4 h-100 d-flex flex-column">
+                <MudCardContent Class="flex-grow-1 d-flex flex-column">
+                    <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">Strategisk Partnerskab</MudText>
+                    <div class="d-flex justify-center flex-grow-1">
+                        <MudText Align="Align.Center" Class="mb-4 mx-auto" Style="max-width: 80%;">
+                            Vi dykker dybt ned i din forretning for at forstå dine
+                            udfordringer og mål.
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <div class="d-flex justify-center mt-auto">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Class="mt-2"
+                               Href="/strategisk-partnerskab">
+                        Læs Mere
+                    </MudButton>
+                </div>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <MudCard Elevation="4" Class="rounded-lg pa-4 h-100 d-flex flex-column">
+                <MudCardContent Class="flex-grow-1 d-flex flex-column">
+                    <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">Innovation & Stabilitet</MudText>
+                    <div class="d-flex justify-center flex-grow-1">
+                        <MudText Align="Align.Center" Class="mb-4 mx-auto" Style="max-width: 80%;">
+                            Vi kombinerer innovative teknologier med solid arkitektur.
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <div class="d-flex justify-center mt-auto">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Class="mt-2"
+                               Href="/innovation-stabilitet">
+                        Læs Mere
+                    </MudButton>
+                </div>
+            </MudCard>
+        </MudItem>
+
+        <!-- Second row -->
+        <MudItem xs="12" md="6">
+            <MudCard Elevation="4" Class="rounded-lg pa-4 h-100 d-flex flex-column">
+                <MudCardContent Class="flex-grow-1 d-flex flex-column">
+                    <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">Agil Udvikling</MudText>
+                    <div class="d-flex justify-center flex-grow-1">
+                        <MudText Align="Align.Center" Class="mb-4 mx-auto" Style="max-width: 80%;">
+                            Gennem tæt dialog og hurtige iterationer sikrer vi de
+                            bedste løsninger.
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <div class="d-flex justify-center mt-auto">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Class="mt-2"
+                               Href="/agil-udvikling">
+                        Læs Mere
+                    </MudButton>
+                </div>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <MudCard Elevation="4" Class="rounded-lg pa-4 h-100 d-flex flex-column">
+                <MudCardContent Class="flex-grow-1 d-flex flex-column">
+                    <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">End-to-End Ekspertise</MudText>
+                    <div class="d-flex justify-center flex-grow-1">
+                        <MudText Align="Align.Center" Class="mb-4 mx-auto" Style="max-width: 80%;">
+                            Fra frontend til infrastruktur har vi ekspertisen til at
+                            håndtere hele din teknologistack.
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <div class="d-flex justify-center mt-auto">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Class="mt-2"
+                               Href="/end-to-end-ekspertise">
+                        Læs Mere
+                    </MudButton>
+                </div>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
 </MudContainer>
+
+<MudPaper Elevation="0" Class="py-10 px-4 mt-8 mb-8" Style="background-color: #f8f9fa;">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4">Kontakt Os</MudText>
+        
+        <MudText Align="Align.Center">
+            Har du brug for en skræddersyet løsning? Kontakt os på 
+            <MudLink Href="mailto:kontakt@firma.dk" Underline="Underline.Always">kontakt@firma.dk</MudLink> 
+            for en uforpligtende snak.
+        </MudText>
+    </MudContainer>
+</MudPaper>
