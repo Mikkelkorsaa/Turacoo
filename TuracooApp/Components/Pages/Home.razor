@@ -1,21 +1,33 @@
 ﻿@page "/"
 
-<div class="d-flex flex-column align-items-center" style="width: 100%; height: calc(100vh - 192px);)">
-    <MudPaper Class="mud-theme-primary" Width="80%" Height="100%">
-        <MudImage Class="mx-auto d-block" Src="Images/logo_no_background.png" Style="height: 60vh"/>
-        <MudText Align="Align.Center" Typo="Typo.h2">Din Partner i Digital Transformation</MudText>
-        <MudText Align="Align.Center" Typo="Typo.subtitle1">Vi omsætter komplekse udfordringer til værdiskabende digitale løsninger.</MudText>
+<div class="d-flex flex-column align-items-center" style="width: 100%; height: calc(100vh - 192px); margin-bottom: 64px">
+    <MudPaper Class="mud-theme-primary" Width="80%" Height="100%" >
+        <MudImage Class="mx-auto d-block" Src="Images/logo_no_background.png" Style="max-width: 100%; height: 70%" />
+        <MudText Align="Align.Center" Typo="Typo.h3" Class="mt-3" Style="padding: 10px 0">
+            Din Partner i Digital Transformation
+        </MudText>
+        <MudText Align="Align.Center" Typo="Typo.subtitle2" Class="px-3">
+            Vi omsætter komplekse udfordringer til værdiskabende digitale løsninger.
+        </MudText>
+        <div class="d-flex justify-center mt-auto">
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Secondary"
+                       Class="mt-2"
+                       Href="/kontakt-os">
+                Start Samarbejdet
+            </MudButton>
+        </div>
     </MudPaper>
 </div>
 
-<div class="d-flex flex-column align-items-center" style="padding-top: 64px; padding-bottom: 64px; background-color: #f8f9fa;">
-    <MudPaper Elevation="0" Width="80%" Height="100%" Style="padding: 32px; background-color: #f8f9fa;">
-        <MudText GutterBottom="true" Align="Align.Center" Typo="Typo.h3">Mere end bare teknologi</MudText>
-        <MudText GutterBottom="true" Align="Align.Center" Typo="Typo.body1" Style="width: 40%; margin: 0 auto;">
+<div class="d-flex flex-column align-items-center py-4" style="background-color: #f8f9fa;">
+    <MudPaper Elevation="0" Width="100%" Class="px-lg-5 py-4" Style="background-color: #f8f9fa;">
+        <MudText GutterBottom="true" Align="Align.Center" Typo="Typo.h5">Mere end bare teknologi</MudText>
+        <!-- Adjust text width for responsiveness -->
+        <MudText GutterBottom="true" Align="Align.Center" Typo="Typo.body2" Class="mx-auto px-2 px-md-5" Style="max-width: 600px;">
             Hos os handler softwareudvikling ikke bare om kode – det handler om at skabe reel forretningsværdi.
             Vi er din strategiske partner, der hjælper med at transformere idéer til skalerbare løsninger.
         </MudText>
-        
     </MudPaper>
 </div>
 
