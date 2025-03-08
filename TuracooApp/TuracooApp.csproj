@@ -4,7 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>TuracooTest</RootNamespace>
+        <RootNamespace>Turacoo</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,6 +13,10 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Features\Home\Index.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Core.csproj" />
     </ItemGroup>
 
 </Project>

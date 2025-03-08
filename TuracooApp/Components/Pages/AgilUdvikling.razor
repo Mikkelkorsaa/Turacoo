@@ -1,6 +1,70 @@
 @page "/agil-udvikling"
-<h3>Agil Udvikling</h3>
 
-@code {
-    
-}
+<PageTitle>Agil Udvikling</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-8">
+    <div class="d-flex flex-column align-items-center">
+        <MudText Typo="Typo.h2" Align="Align.Center" Class="mb-4">Agil Udvikling</MudText>
+
+        <MudDivider Class="my-6" Style="width: 100px; height: 3px;" />
+
+        <MudPaper Elevation="0" Class="pa-6 mb-6" Style="max-width: 800px; background-color: #f8f9fa; border-radius: 8px;">
+            <MudText Typo="Typo.body1" Class="mb-4">
+                Agilitet er nøglen til succes i en verden, hvor teknologier og forretningskrav ændrer sig hurtigt. Vi arbejder efter agile principper, hvor fleksibilitet, hurtige iterationer og kontinuerlig feedback er centrale elementer.
+            </MudText>
+
+            <MudText Typo="Typo.body1" Class="mb-2">
+                Vores tilgang sikrer:
+            </MudText>
+
+            <ul class="ml-6 mb-4">
+                <li class="mb-2">Hurtig tilpasning til skiftende forretningskrav</li>
+                <li class="mb-2">Tæt samarbejde og gennemsigtighed gennem hele udviklingsprocessen</li>
+                <li class="mb-2">Fokus på brugerbehov og forretningsmål</li>
+            </ul>
+
+            <MudText Typo="Typo.body1">
+                Vi sikrer, at din virksomhed ikke blot får en teknisk løsning, men en strategi, der understøtter jeres vækst og udvikling.
+            </MudText>
+        </MudPaper>
+    </div>
+</MudContainer>
+
+<MudPaper Elevation="0" Class="py-10 px-4 mt-8" Style="background-color: #f8f9fa;">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudGrid>
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">Fleksibilitet</MudText>
+                        <MudText Typo="Typo.body2">
+                            Vi tilpasser os ændringer i krav og prioriteter gennem hele udviklingsprocessen.
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">Hurtige Iterationer</MudText>
+                        <MudText Typo="Typo.body2">
+                            Vi leverer funktionalitet i korte, fokuserede sprints, så du hurtigt ser resultater.
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">Kontinuerlig Feedback</MudText>
+                        <MudText Typo="Typo.body2">
+                            Din input er afgørende, og vi integrerer feedback løbende for at sikre den bedste løsning.
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    </MudContainer>
+</MudPaper>

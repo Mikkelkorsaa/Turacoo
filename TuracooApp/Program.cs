@@ -1,4 +1,4 @@
-using TuracooTest.Components;
+using Turacoo.Components;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);

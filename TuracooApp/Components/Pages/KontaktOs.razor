@@ -1,6 +1,88 @@
 @page "/kontakt-os"
-<h3>Kontakt Os</h3>
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Kontakt Os</PageTitle>
+
+<div>
+    <MudContainer MaxWidth="MaxWidth.Small">
+        <MudPaper Elevation="3" Class="pa-7 ma-4 rounded-lg">
+            <MudText Typo="Typo.h3" Align="Align.Center" Class="mb-4" Color="Color.Surface">Kontakt Os</MudText>
+            <MudText Typo="Typo.subtitle1" Align="Align.Center" Class="mb-6" Color="Color.Surface">Har du spørgsmål? Send os en besked.</MudText>
+
+            <EditForm Model="@contactModel" OnValidSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+                <MudGrid>
+                    <MudItem xs="12">
+                        <MudTextField @bind-Value="contactModel.Name"
+                                      Placeholder="Navn"
+                                      Required="true"
+                                      For="@(() => contactModel.Name)" />
+                    </MudItem>
+
+                    <MudItem xs="12">
+                        <MudTextField @bind-Value="contactModel.Email"
+                                      Placeholder="Email"
+                                      Required="true"
+                                      For="@(() => contactModel.Email)" />
+                    </MudItem>
+
+                    <MudItem xs="12">
+                        <MudTextField @bind-Value="contactModel.Message"
+                                      Placeholder="Besked"
+                                      Required="true"
+                                      Lines="10"
+                                      For="@(() => contactModel.Message)" />
+                    </MudItem>
+
+                    <MudItem xs="12">
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Secondary"
+                                   Size="Size.Large"
+                                   FullWidth="true"
+                                   Class="py-3"
+                                   OnClick="HandleSubmit">
+                            Send Besked
+                        </MudButton>
+                    </MudItem>
+                </MudGrid>
+            </EditForm>
+        </MudPaper>
+    </MudContainer>
+</div>
+
+<style>
+    .hero-background {
+        background-color: #2a5d4b; /* Deep green from the image */
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+    }
+</style>
 
 @code {
-    
+    private ContactModel contactModel = new ContactModel();
+
+    private void HandleSubmit()
+    {
+        // Add your form submission logic here
+        Console.WriteLine($"Form submitted: {contactModel.Name}, {contactModel.Email}");
+        // You would typically call a service to send the message
+
+        // Reset the form after submission
+        contactModel = new ContactModel();
+    }
+
+    public class ContactModel
+    {
+        [Required(ErrorMessage = "Navn er påkrævet")]
+        public string Name { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email er påkrævet")]
+        [EmailAddress(ErrorMessage = "Ugyldig email adresse")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Besked er påkrævet")]
+        public string Message { get; set; } = string.Empty;
+    }
 }

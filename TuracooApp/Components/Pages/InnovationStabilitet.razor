@@ -1,6 +1,60 @@
 @page "/innovation-stabilitet"
-<h3>Innovation Stabilitet</h3>
 
-@code {
-    
-}
+<PageTitle>Inovation Stabilitet</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-8">
+    <div class="d-flex flex-column align-items-center">
+        <MudText Typo="Typo.h2" Align="Align.Center" Class="mb-4">Innovation & Stabilitet</MudText>
+        
+        <MudDivider Class="my-6" Style="width: 100px; height: 3px;" />
+        
+        <MudPaper Elevation="0" Class="pa-6 mb-6" Style="max-width: 800px; background-color: #f8f9fa; border-radius: 8px;">
+            <MudText Typo="Typo.body1" Class="mb-4">
+                Vi kombinerer nytænkning med driftssikkerhed. Innovation er nøglen til vækst, men stabilitet er fundamentet, der sikrer kontinuitet. Vores tilgang til softwareudvikling balancerer begge dele, så din virksomhed kan udvikle sig uden at miste fodfæste.
+            </MudText>
+            
+            <MudText Typo="Typo.body1">
+                Med vår ekspertise i moderne teknologier som React, Bootstrap, Blazor og TypeScript/JavaScript på frontend, samt Python, .NET (C#) og Node.js på backend, skaber vi innovative løsninger, der er skalerbare og robuste. Vi sikrer, at din IT-infrastruktur er fremtidssikret med effektive DevOps-processer, monitorering og cloud-løsninger i Azure og Kubernetes.
+            </MudText>
+        </MudPaper>
+    </div>
+</MudContainer>
+
+<MudPaper Elevation="0" Class="py-10 px-4 mt-8" Style="background-color: #f8f9fa;">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudGrid>
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">Frontend Teknologier</MudText>
+                        <MudText Typo="Typo.body2">
+                            React, Bootstrap, Blazor, TypeScript/JavaScript
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+            
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">Backend Teknologier</MudText>
+                        <MudText Typo="Typo.body2">
+                            Python, .NET (C#), Node.js
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+            
+            <MudItem xs="12" md="4">
+                <MudCard Elevation="4" Class="h-100">
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">Infrastruktur</MudText>
+                        <MudText Typo="Typo.body2">
+                            DevOps-processer, monitorering, Azure, Kubernetes
+                        </MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    </MudContainer>
+</MudPaper>

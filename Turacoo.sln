@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuracooApp", "TuracooApp\TuracooApp.csproj", "{3840B845-9D52-481F-AD0C-7CCD75054001}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{35EDB449-695E-41B5-9EE3-D11FEB69D6ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3840B845-9D52-481F-AD0C-7CCD75054001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3840B845-9D52-481F-AD0C-7CCD75054001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3840B845-9D52-481F-AD0C-7CCD75054001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EDB449-695E-41B5-9EE3-D11FEB69D6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EDB449-695E-41B5-9EE3-D11FEB69D6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EDB449-695E-41B5-9EE3-D11FEB69D6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EDB449-695E-41B5-9EE3-D11FEB69D6ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
