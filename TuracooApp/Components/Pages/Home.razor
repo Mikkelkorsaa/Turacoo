@@ -128,6 +128,23 @@
     </MudGrid>
 </MudContainer>
 
+<MudPaper Elevation="0" Class="my-4">
+    <MudText Typo="Typo.h5" Class="mb-4 text-center">Worked with</MudText>
+    <div class="logo-carousel pause-on-hover">
+        <div class="logo-track">
+            @for (int i = 0; i < 3; i++) // Repeating logos 3 times instead of 2
+            {
+                @foreach (var logo in logos)
+                {
+                    <div class="logo-item">
+                        <img src="@logo.ImageUrl" alt="@logo.Name" title="@logo.Name" loading="eager" />
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</MudPaper>
+
 <MudPaper Elevation="0" Class="py-10 px-4 mt-8 mb-8" Style="background-color: #f8f9fa;">
     <MudContainer MaxWidth="MaxWidth.Large">
         <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-4">Kontakt Os</MudText>
@@ -139,3 +156,73 @@
         </MudText>
     </MudContainer>
 </MudPaper>
+
+<style>
+    :root {
+        --logo-width: 160px; /* Match your max-width for images */
+        --logo-count: @(logos.Count); /* Use the count of your logos */
+    }
+    
+    .logo-carousel {
+        width: 80%; /* Reduced from 100% to 80% */
+        max-width: 800px; /* Added max-width */
+        margin: 0 auto; /* Center the carousel */
+        overflow: hidden;
+        position: relative;
+        background-color: white;
+        padding: 20px 0;
+    }
+
+    .logo-track {
+        display: flex;
+        animation: slide 20s linear infinite; /* Reduced from 30s to 20s to speed up */
+        width: fit-content;
+        will-change: transform; /* Performance optimization */
+    }
+
+    .logo-item {
+        flex: 0 0 auto;
+        margin: 0 20px; /* Reduced from 30px to 20px */
+        height: 150px; /* Reduced from 60px to 50px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-item img {
+        max-height: 100%;
+        max-width: 150px; /* Reduced from 120px to 100px */
+        transition: all 0.3s ease;
+    }
+
+    .logo-item img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    @@keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * (var(--logo-width) + 40px) * var(--logo-count)));
+        }
+    }
+</style>
+
+@code {
+    private List<LogoItem> logos = new List<LogoItem>
+    {
+        new LogoItem { Name = "Bankdata", ImageUrl = "Images/bankdata_logo.jpeg" },
+        new LogoItem { Name = "B&R", ImageUrl = "Images/br_industrial_automation_logo.jpeg" },
+        new LogoItem { Name = "Feincoffe", ImageUrl = "Images/feincofee.jpeg" },
+        new LogoItem { Name = "Feinwood", ImageUrl = "Images/feinwood_logo.jpeg" },
+        new LogoItem { Name = "PLSP", ImageUrl = "Images/plsp_logo.jpeg" },
+    };
+
+    private class LogoItem
+    {
+        public string Name { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}
