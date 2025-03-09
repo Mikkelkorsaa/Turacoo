@@ -1,0 +1,45 @@
+@page "/logo-carousel"
+@implements IDisposable
+
+
+
+@code {
+    private MudCarousel<object> carousel;
+    private bool isPaused = false;
+    private bool isLoaded = false;
+    private Timer timer;
+    
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        
+        // Create a timer to set isLoaded to true after a delay
+        timer = new Timer(500);
+        timer.Elapsed += (sender, args) => 
+        {
+            isLoaded = true;
+            InvokeAsync(StateHasChanged);
+            timer.Stop();
+            timer.Dispose();
+        };
+        timer.Start();
+    }
+    
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+    
+    private void TogglePause()
+    {
+        isPaused = !isPaused;
+        if (isPaused)
+        {
+            carousel?.Pause();
+        }
+        else
+        {
+            carousel?.Start();
+        }
+    }
+}

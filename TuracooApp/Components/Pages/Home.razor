@@ -128,22 +128,60 @@
     </MudGrid>
 </MudContainer>
 
-<MudPaper Elevation="0" Class="my-4">
-    <MudText Typo="Typo.h5" Class="mb-4 text-center">Worked with</MudText>
-    <div class="logo-carousel pause-on-hover">
-        <div class="logo-track">
-            @for (int i = 0; i < 3; i++) // Repeating logos 3 times instead of 2
-            {
-                @foreach (var logo in logos)
-                {
-                    <div class="logo-item">
-                        <img src="@logo.ImageUrl" alt="@logo.Name" title="@logo.Name" loading="eager" />
+<MudContainer MaxWidth="MaxWidth.Large" Class="my-4">
+    <MudText Typo="Typo.h5" Class="mb-4 text-center">Our Partners</MudText>
+
+    <MudPaper Elevation="0" Class="py-4 position-relative">
+        @if (!isLoaded)
+        {
+            <div class="d-flex justify-center align-center" style="height: 150px;">
+                <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+            </div>
+        }
+        else
+        {
+            <MudCarousel
+                @ref="carousel"
+                Class="mud-width-full"
+                Style="height: 150px;"
+                AutoCycle="true"
+                ShowArrows="true"
+                ShowDelimiters="true"
+                Color="Color.Primary"
+                EnableSwipeGesture="true"
+                TData="object">
+
+                <MudCarouselItem Transition="Transition.Slide" Color="@Color.Transparent">
+                    <div class="d-flex justify-center">
+                        <MudImage Src="Images/bankdata_logo.jpeg" Alt="Bankdata Logo" Height="100" Width="200" ObjectFit="ObjectFit.Contain" />
                     </div>
-                }
-            }
-        </div>
+                </MudCarouselItem>
+
+                <MudCarouselItem Transition="Transition.Slide" Color="@Color.Transparent">
+                    <div class="d-flex justify-center">
+                        <MudImage Src="Images/feincofee.jpeg" Alt="Feincofee Logo" Height="100" Width="200" ObjectFit="ObjectFit.Contain" />
+                    </div>
+                </MudCarouselItem>
+
+                <MudCarouselItem Transition="Transition.Slide" Color="@Color.Transparent">
+                    <div class="d-flex justify-center">
+                        <MudImage Src="Images/plsp_logo.jpeg" Alt="PLSP Logo" Height="100" Width="200" ObjectFit="ObjectFit.Contain" />
+                    </div>
+                </MudCarouselItem>
+            </MudCarousel>
+        }
+    </MudPaper>
+
+    <div class="d-flex justify-center mt-4">
+        <MudButton
+            Variant="Variant.Filled"
+            Color="Color.Primary"
+            OnClick="TogglePause"
+            Class="mx-2">
+            @(isPaused ? "Resume" : "Pause")
+        </MudButton>
     </div>
-</MudPaper>
+</MudContainer>
 
 <MudPaper Elevation="0" Class="py-10 px-4 mt-8 mb-8" Style="background-color: #f8f9fa;">
     <MudContainer MaxWidth="MaxWidth.Large">
@@ -158,59 +196,33 @@
 </MudPaper>
 
 <style>
-    :root {
-        --logo-width: 160px; /* Match your max-width for images */
-        --logo-count: @(logos.Count); /* Use the count of your logos */
-    }
-    
-    .logo-carousel {
-        width: 80%; /* Reduced from 100% to 80% */
-        max-width: 800px; /* Added max-width */
-        margin: 0 auto; /* Center the carousel */
-        overflow: hidden;
-        position: relative;
-        background-color: white;
-        padding: 20px 0;
-    }
-
-    .logo-track {
-        display: flex;
-        animation: slide 20s linear infinite; /* Reduced from 30s to 20s to speed up */
-        width: fit-content;
-        will-change: transform; /* Performance optimization */
+    .mud-carousel-container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
     .logo-item {
-        flex: 0 0 auto;
-        margin: 0 20px; /* Reduced from 30px to 20px */
-        height: 150px; /* Reduced from 60px to 50px */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo-item img {
-        max-height: 100%;
-        max-width: 150px; /* Reduced from 120px to 100px */
         transition: all 0.3s ease;
     }
 
-    .logo-item img:hover {
-        filter: grayscale(0%);
-        opacity: 1;
+    .grayscale {
+        filter: grayscale(100%);
+        opacity: 0.7;
     }
 
-    @@keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-1 * (var(--logo-width) + 40px) * var(--logo-count)));
-        }
+    .logo-item:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+        opacity: 1;
     }
 </style>
 
 @code {
+    private MudCarousel<object> carousel;
+    private bool isPaused = false;
+    private bool isLoaded = false;
+    
     private List<LogoItem> logos = new List<LogoItem>
     {
         new LogoItem { Name = "Bankdata", ImageUrl = "Images/bankdata_logo.jpeg" },
@@ -218,11 +230,27 @@
         new LogoItem { Name = "Feincoffe", ImageUrl = "Images/feincofee.jpeg" },
         new LogoItem { Name = "Feinwood", ImageUrl = "Images/feinwood_logo.jpeg" },
         new LogoItem { Name = "PLSP", ImageUrl = "Images/plsp_logo.jpeg" },
-    };
-
+    }; 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Simulate loading delay
+            await Task.Delay(100);
+            isLoaded = true;
+            StateHasChanged();
+        }
+    }
+    
+    private void TogglePause()
+    {
+        Console.WriteLine("Paused");
+    }
+    
     private class LogoItem
     {
         public string Name { get; set; }
         public string ImageUrl { get; set; }
     }
+
 }
